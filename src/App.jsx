@@ -38,17 +38,17 @@ function App() {
       setCoordinates({ latitude, longitude });
     });
   }, []);
-  
+
   useEffect(() => {
     if (coordinates) {
       fetch(
-        `codiblybackend.onrender.com/forecast/${coordinates.latitude}/${coordinates.longitude}`
+        `https://codiblybackend.onrender.com/forecast/${coordinates.latitude}/${coordinates.longitude}`
       )
         .then((res) => res.json())
         .then((data) => setWeatherData(data));
 
       fetch(
-        `codiblybackend.onrender.com/summary/${coordinates.latitude}/${coordinates.longitude}`
+        `https://codiblybackend.onrender.com/summary/${coordinates.latitude}/${coordinates.longitude}`
       )
         .then((res) => res.json())
         .then((data) => setSummaryData(data));
