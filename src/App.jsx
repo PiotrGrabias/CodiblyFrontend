@@ -42,13 +42,13 @@ function App() {
   useEffect(() => {
     if (coordinates) {
       fetch(
-        `http://127.0.0.1:9000/forecast/${coordinates.latitude}/${coordinates.longitude}`
+        `codiblybackend.onrender.com/forecast/${coordinates.latitude}/${coordinates.longitude}`
       )
         .then((res) => res.json())
         .then((data) => setWeatherData(data));
 
       fetch(
-        `http://127.0.0.1:9000/summary/${coordinates.latitude}/${coordinates.longitude}`
+        `codiblybackend.onrender.com/summary/${coordinates.latitude}/${coordinates.longitude}`
       )
         .then((res) => res.json())
         .then((data) => setSummaryData(data));
